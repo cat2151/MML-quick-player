@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="generatorApp">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="controller.js"></script>
+    <script type='text/javascript' src='jquery.js'></script>
+    <script type='text/javascript' src='siopm.js'></script>
+  </head>
+  <body>
+    <div ng-controller="generatorController">
+      <div>
+        <h1>Chord Nameを入力してください</h1>
+
+        <input type="text" ng-model="inputText"
+          placeholder="大文字でCを書いてみてください"
+          ng-change="generate()"
+        >
+      </div>
+      <br/>
+      <span>MMLフォーマット:
+        <select>
+          <option>SiON (すたどんたんでお馴染み)</option>
+        </select>
+      </span>
+
+      <hr>
+
+      <h1>MML生成結果:</h1>
+      <h2>{{generatedMml}}</h1>
+    </div>
+
+    <hr>
+
+    <div>
+      <a href="http://app.16dimensional.com/stadon/">すたどんたん</a>
+    </div>
+    <br/>
+    <div>
+      <a href="https://github.com/cat2151/MML-chord-generator/">ソースファイル githubリポジトリ</a>
+    </div>
+  </body>
+</html>
