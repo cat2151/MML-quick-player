@@ -8,16 +8,24 @@
     <script src="controller.js"></script>
     <script type='text/javascript' src='jquery.js'></script>
     <script type='text/javascript' src='siopm.js'></script>
+
+    <style type="text/css">
+    textarea {
+    width: 640px;
+    height: 16em;
+    }
+    </style>
   </head>
   <body>
     <div ng-controller="generatorController">
       <div>
-        <h1>Chord Nameを入力してください</h1>
+        <h1>MMLを入力してください</h1>
 
-        <input type="text" ng-model="inputText"
-          placeholder="大文字でCを書いてみてください"
+        <textarea cols="100" rows="20"
+          ng-model="inputText"
+          placeholder="MMLを入力してください"
           ng-change="generate()"
-        >
+        ></textarea>
       </div>
       <br/>
       <span>MMLフォーマット:
@@ -25,11 +33,6 @@
           <option>SiON (すたどんたんでお馴染み)</option>
         </select>
       </span>
-
-      <hr>
-
-      <h1>MML生成結果:</h1>
-      <h2>{{generatedMml}}</h1>
     </div>
 
     <hr>
@@ -39,7 +42,7 @@
     </div>
     <br/>
     <div>
-      <a href="https://github.com/cat2151/MML-chord-generator/">ソースファイル githubリポジトリ</a>
+      <a href="https://github.com/cat2151/MML-quick-player/">ソースファイル githubリポジトリ</a>
     </div>
   </body>
 </html>
