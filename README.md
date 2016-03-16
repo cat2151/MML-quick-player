@@ -15,6 +15,10 @@ http://cat2151.github.io/MML-quick-player/#?mml=cde
 ソース規模を最小限にする。現状の目安は100行未満。
 機能は追加しない方向。
 
+また、MMLとURLとの入出力は、MML-editorの機能のほうが優れている。
+こちらの場合、MML内容によってはtwitter短縮URLの対象にならない問題がある。
+MML-quick-playerのURL入出力機能をこちらに反映するかは、検討中。
+
 名称を MML-quick-player から MML-player-sample にするかは、検討中。
 
 -
