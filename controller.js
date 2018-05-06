@@ -33,7 +33,7 @@ function($scope, $location, $timeout, GeneratorService) {
     try{
       SIOPM.stop();
     }catch(e){
-      console.log(e);
+      $scope.SIOPM_fallback();
     }
     Pico.pause();
 
@@ -76,14 +76,18 @@ function($scope, $location, $timeout, GeneratorService) {
     SIOPM.play();
   };
 
+  $scope.SIOPM_fallback = function() {
+    $scope.mmlFormat = "sionic";
+  };
+
   try{
     SIOPM.initialize(); // [前提] SIOPMのプロパティへ各functionを代入し終わっていること
   }catch(e){
-    //fallback
-    $scope.mmlFormat = "sionic";
-    $timeout(function() {
-      setMmlFromUrl();
-    }, 0);
+    $scope.SIOPM_fallback();
   }
+
+  $timeout(function() {
+    setMmlFromUrl();
+  }, 0);
 
 }]);
