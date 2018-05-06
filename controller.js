@@ -6,6 +6,7 @@ function($scope, $location, $timeout, GeneratorService) {
   $scope.generatedMml = "なし";
   $scope.mmlFormat = "sion";
   $scope.iPhoneReady = false;
+  $scope.isPlayFromUrl = false;
 
   function setMmlFromUrl() {
     // [URLイメージ] ～/#?mml=C
@@ -13,6 +14,7 @@ function($scope, $location, $timeout, GeneratorService) {
     if (angular.isString(urlMml)) {
       $scope.inputText = urlMml;
       $scope.generate();
+      $scope.isPlayFromUrl = true;
     }
   }
 
@@ -79,7 +81,9 @@ function($scope, $location, $timeout, GeneratorService) {
   }catch(e){
     //fallback
     $scope.mmlFormat = "sionic";
-    $scope.generate();
+    $timeout(function() {
+      setMmlFromUrl();
+    }, 0);
   }
 
 }]);

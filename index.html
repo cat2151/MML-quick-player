@@ -29,7 +29,8 @@
           placeholder="MMLを入力してください"
           ng-change="generate()"
         ></textarea>
-        <button ng-show="isiPhone()" ng-click='play()'>再生</button>
+        <br/>
+        <button ng-show="isPlayFromUrl || isiPhone()" ng-click='play()'>再生</button>
       </div>
       <br/>
       <span>MMLフォーマット:
